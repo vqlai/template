@@ -1,0 +1,165 @@
+html{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  /* 禁用文本选中 */
+  user-select: none ; 
+  background: #fff;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  /*解决iphonex底部问题*/
+  /* padding-bottom: constant(safe-area-inset-bottom); */
+  /* 解决fastclick点击元素报错问题，但会导致页面鼠标可滚动，但无法上下滑动*/
+  /* touch-action: none;  */
+  /* iphonex刘海适配 */
+}
+
+input{ font-size: 28px; width: 100%; background-color: transparent; }
+/* 清楚浮动 */
+.clearfix:after{ content: " "; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { zoom: 1; }
+/* 文本...隐藏 */
+.line-hidden{ display: block; overflow: hidden; white-space: nowrap; -o-text-overflow: ellipsis; text-overflow: ellipsis; }
+.two-line-hidden{overflow: hidden; display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+.multi-line-hidden{overflow: hidden;text-overflow: ellipsis; display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;}
+/* .multi-line{position:relative;overflow:hidden;}
+.multi-line:after {
+	content: "\02026" !important;      
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding-left: 40px;
+	background:-webkit-linear-gradient(left,transparent,#fff 55%);
+	background:-o-linear-gradient(right,transparent,#fff 55%);
+	background:-moz-linear-gradient(right,transparent,#fff 55%);
+	background:linear-gradient(to right,transparent,#fff 55%);
+} */
+/* 阿里iconfont字体图标通用样式 */
+.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+/* swiper设置 */
+.swiper-container{ width: 100%; height: 100%; }
+.home .swiper-pagination, .coupon .swiper-pagination{ text-align: right!important; padding: 0 30px; box-sizing: border-box; }
+.home .swiper-pagination .swiper-pagination-bullet,
+.coupon .swiper-pagination .swiper-pagination-bullet{
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  opacity: .8;
+}
+.home .swiper-pagination .swiper-pagination-bullet-active,
+.coupon .swiper-pagination .swiper-pagination-bullet-active{
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #838383;
+  box-sizing: border-box; 
+  opacity: .8;
+}
+.home .swiper-button-prev{left: 10px;}
+.home .swiper-button-next{right: 10px;}
+
+/* 会员特权swiper */
+.viptq .swiper-container .swiper-pagination-bullets{
+  width: auto;
+  height: 40px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.viptq .swiper-container .tq-pagination .swiper-pagination-bullet{
+  width: 12px;
+  height: 12px;
+  margin: 0 10px;
+  background: #000;
+  border-radius: 100%;
+}
+.viptq .swiper-container .tq-pagination .swiper-pagination-bullet-active{
+  background: #555;
+}
+
+/* vw适配配置 */
+img {
+  display: block; /*新增，因为图片大小为小数时，会出现白线空白*/
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  vertical-align: top;
+  content: normal !important;
+}
+
+/* vw适配 */
+.flexContainer {
+  display: flex;
+  width: 750px;
+}
+
+.aspectratio {
+  position: relative;
+}
+.aspectratio::before {
+  content: '';
+  display: block;
+  width: 1px;
+  margin-left: -1px;
+  height: 0;
+}
+
+.aspectratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.aspectratio-content img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+/* vant ui样式调整 */
+/* .van-swipe .van-swipe__indicators{ left: 90%!important; }
+.van-swipe .van-swipe__indicators .van-swipe__indicator--active{ background-color:#fff; } */
+/* .van-dialog-own{ font-size: 16px!important; }  */
+/* 表单 */
+.van-cell-group{ background: transparent; }
+.van-cell-group::after{border-width:0;}
+.van-cell{background: transparent;}
+/* .van-button{font-size: 30px;line-height: 30px;} */
+/* .van-button--small{font-size: 24px;line-height: 24px;} */
+/* .field{font-size: 28px;} */
+
+/* 弹窗 */
+.van-toast{padding: 26px 20px;font-size: 28px;line-height: 38px; min-width: 520px;text-align: center;}
+.van-dialog{ width: 76%!important;}
+.van-dialog .van-dialog__message{padding: 30px 36px;font-size: 32px;text-align: center;}
+.van-dialog .van-button--large{height: 80px;line-height: 80px;}
+.van-dialog .van-button{font-size: 36px;}
+.van-dialog .van-dialog__confirm, .van-dialog .van-dialog__confirm:active{ color: #03ad88; }
+.van-dialog .van-dialog__confirm:before,.van-dialog .van-dialog__cancel:before{background-color: rgba(0,0,0,.1);}
+.van-popup .van-picker__confirm,.van-popup .van-picker__cancel{ color: #03ad88; }
+
+.van-area .van-picker__toolbar{height: 80px;line-height: 80px;}
+.van-area .van-picker__cancel,.van-area .van-picker__confirm{padding: 0 40px;font-size: 32px;}
+.van-area .van-picker-column{font-size: 32px;}
+
+.van-loading{ position: absolute; z-index: 500; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+
+.nodata{text-align: center;font-size: 28px;padding: 20% 0;text-align: center;color: #888;}
+
+/* .topBar{padding-top: 80px;} */
+
+
+
